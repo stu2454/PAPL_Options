@@ -1,4 +1,4 @@
-import { AlertTriangle, TrendingUp, Users, Zap, Shield, Target, Info } from 'lucide-react';
+import { AlertTriangle, Users, Zap, Shield, Target, Info } from 'lucide-react';
 
 // Tooltip component for inline documentation
 const InfoTooltip = ({ children }: { children: React.ReactNode }) => {
