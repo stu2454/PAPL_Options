@@ -1,17 +1,4 @@
-import { AlertTriangle, TrendingUp, Users, Zap, Shield, Target, Info } from 'lucide-react';
-
-// Tooltip component for inline documentation
-const InfoTooltip = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <span className="group relative inline-block ml-1 align-middle">
-      <Info className="w-4 h-4 text-gray-400 hover:text-ndis-purple cursor-help inline" />
-      <div className="invisible group-hover:visible absolute z-10 w-96 p-4 bg-gray-900 text-white text-sm rounded-lg shadow-xl left-0 top-6 pointer-events-none">
-        <div className="absolute -top-2 left-4 w-4 h-4 bg-gray-900 transform rotate-45"></div>
-        {children}
-      </div>
-    </span>
-  );
-};
+import { AlertTriangle, TrendingUp, Users, Zap, Shield, Target } from 'lucide-react';
 
 export function StrategicContextPage() {
   return (
@@ -42,125 +29,27 @@ export function StrategicContextPage() {
 
         <div className="space-y-4 text-gray-700">
           <p>
-            During the OFP/NFP transition, plan managers processing{' '}
-            <strong className="inline-flex items-center">
-              54.7 million annual transactions
-              <InfoTooltip>
-                <div className="space-y-2">
-                  <p className="font-semibold border-b border-gray-700 pb-2">Transaction Volume Calculation</p>
-                  <p className="text-xs leading-relaxed">
-                    <strong>Data Source:</strong> NDIA Q1 2025-26 Quarterly Dashboard
-                  </p>
-                  <p className="text-xs leading-relaxed">
-                    <strong>Calculation Method:</strong>
-                  </p>
-                  <ul className="text-xs space-y-1 ml-3 list-disc list-inside">
-                    <li>Active participants: 751,446</li>
-                    <li>Service utilisation rate: 70% (actively receiving services)</li>
-                    <li>Transaction frequency: 2 invoices per participant per week</li>
-                    <li>Annual formula: 751,446 × 0.70 × 2 × 52 weeks = <strong>54.7M transactions</strong></li>
-                  </ul>
-                  <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                    <strong>Assumptions:</strong> This represents provider invoicing activity processed through plan managers. 
-                    The 70% utilisation rate reflects that not all participants have active service delivery in any given 
-                    period. The 2 invoices/week average accounts for variation across different service types and provider 
-                    billing practices.
-                  </p>
-                </div>
-              </InfoTooltip>
-            </strong>
-            {' '}worth{' '}
-            <strong className="inline-flex items-center">
-              $49.5 billion
-              <InfoTooltip>
-                <div className="space-y-2">
-                  <p className="font-semibold border-b border-gray-700 pb-2">Annual Payment Flows</p>
-                  <p className="text-xs leading-relaxed">
-                    <strong>Data Source:</strong> NDIA Q1 2025-26 Quarterly Dashboard
-                  </p>
-                  <p className="text-xs leading-relaxed">
-                    This figure represents total annual NDIS payment flows as reported in the official quarterly 
-                    dashboard. It includes all payments to registered providers across all support categories 
-                    (core supports, capacity building, capital supports).
-                  </p>
-                  <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                    <strong>Note:</strong> The proportion flowing through plan managers (rather than direct NDIA-managed 
-                    or self-managed payments) varies by support category but represents a substantial share of total 
-                    Scheme payments. Plan managers handle funds on behalf of participants who choose this support 
-                    management option, processing invoices and making payments to providers according to the 
-                    participant's approved plan.
-                  </p>
-                </div>
-              </InfoTooltip>
-            </strong>
-            {' '}need accurate, timely pricing information for two parallel frameworks. The current PAPL (Pricing 
-            Arrangements and Price Limits) document serves this function, but the transition creates unprecedented 
-            complexity.
+            During the OFP/NFP transition, plan managers processing <strong>54.7 million annual
+            transactions</strong> worth <strong>$49.5 billion</strong> need accurate, timely pricing
+            information for two parallel frameworks. The current PAPL (Pricing Arrangements and Price
+            Limits) document serves this function, but the transition creates unprecedented complexity.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 my-6">
             <div className="p-4 bg-red-50 rounded-lg border border-red-200">
-              <div className="font-semibold text-red-900 mb-2 inline-flex items-center">
-                Volume Challenge
-                <InfoTooltip>
-                  <div className="space-y-2">
-                    <p className="font-semibold border-b border-gray-700 pb-2">Pricing Lookups Calculation</p>
-                    <p className="text-xs leading-relaxed">
-                      <strong>Calculation:</strong> 54.7M annual transactions × 60% requiring lookup × 2 lookups per transaction = <strong>65.6M lookups</strong>
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                      <strong>Assumptions:</strong> Not every transaction requires pricing verification—approximately 60% need active lookup (routine services vs. exceptional items). Each lookup-required transaction averages 2 pricing checks: initial verification and confirmation/cross-check.
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                      <strong>Context:</strong> This represents the operational burden on plan managers during the transition period when they must navigate dual pricing frameworks.
-                    </p>
-                  </div>
-                </InfoTooltip>
-              </div>
+              <div className="font-semibold text-red-900 mb-2">Volume Challenge</div>
               <div className="text-2xl font-bold text-red-700 mb-1">65.6M</div>
               <div className="text-sm text-gray-600">Annual pricing lookups by plan managers</div>
             </div>
             
             <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
-              <div className="font-semibold text-orange-900 mb-2 inline-flex items-center">
-                Duration Challenge
-                <InfoTooltip>
-                  <div className="space-y-2">
-                    <p className="font-semibold border-b border-gray-700 pb-2">Transition Timeline</p>
-                    <p className="text-xs leading-relaxed">
-                      <strong>Basis:</strong> 6 years represents the estimated period for full OFP→NFP transition based on NDIA planning timelines and historical implementation patterns.
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                      <strong>Phasing:</strong> Gradual rollout across participant cohorts means both frameworks must operate in parallel throughout this period. All existing OFP participants must complete their plan cycles before full NFP adoption.
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                      <strong>Implications:</strong> Longer transition increases cumulative costs for Options 1 and 2, while making Option 3's upfront investment relatively more attractive as efficiency benefits compound over time.
-                    </p>
-                  </div>
-                </InfoTooltip>
-              </div>
+              <div className="font-semibold text-orange-900 mb-2">Duration Challenge</div>
               <div className="text-2xl font-bold text-orange-700 mb-1">6 Years</div>
               <div className="text-sm text-gray-600">Estimated parallel framework operation</div>
             </div>
             
             <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-              <div className="font-semibold text-yellow-900 mb-2 inline-flex items-center">
-                Complexity Challenge
-                <InfoTooltip>
-                  <div className="space-y-2">
-                    <p className="font-semibold border-b border-gray-700 pb-2">Error Rate Calculation</p>
-                    <p className="text-xs leading-relaxed">
-                      <strong>Calculation:</strong> 54.7M transactions × 0.5% baseline error rate = <strong>273,500 errors annually</strong>
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                      <strong>Baseline Assumption:</strong> 0.5% error rate represents current-state processing errors under OFP framework. This includes incorrect pricing applications, wrong budget line assignments, and manual keying errors.
-                    </p>
-                    <p className="text-xs leading-relaxed mt-2 pt-2 border-t border-gray-700">
-                      <strong>Risk:</strong> Transition complexity (dual frameworks, document navigation) increases this baseline rate. Option 2's unified document approach shows 40% increase to 0.7% (382K errors). Option 3's structured interfaces reduce errors by 40-70% through automation.
-                    </p>
-                  </div>
-                </InfoTooltip>
-              </div>
+              <div className="font-semibold text-yellow-900 mb-2">Complexity Challenge</div>
               <div className="text-2xl font-bold text-yellow-700 mb-1">273K</div>
               <div className="text-sm text-gray-600">Potential errors annually at 0.5% baseline</div>
             </div>
