@@ -292,7 +292,7 @@ export function MethodologyPage() {
                     <span className="font-semibold text-blue-900">{cost.value}</span>
                   </div>
                   <p className="text-xs text-gray-700 mb-2 whitespace-pre-wrap">
-                    {cost.calculation || cost.breakdown}
+                    {cost.calculation || ('breakdown' in cost ? cost.breakdown : '')}
                   </p>
                   <p className="text-xs text-gray-600 italic">{cost.rationale}</p>
                 </div>
@@ -309,9 +309,10 @@ export function MethodologyPage() {
                     <span className="font-medium text-green-900 capitalize">
                       {key.replace(/([A-Z])/g, ' $1').trim()}
                     </span>
-                    {benefit.sixYearTotal && (
+                    {'sixYearTotal' in benefit && benefit.sixYearTotal && (
                       <span className="font-semibold text-green-900">{benefit.sixYearTotal}</span>
                     )}
+
                   </div>
                   <div className="space-y-2 text-xs">
                     <div>

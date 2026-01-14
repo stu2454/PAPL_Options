@@ -1,4 +1,4 @@
-import { AlertTriangle, TrendingUp, Users, Zap, Shield, Target } from 'lucide-react';
+import { AlertTriangle, Users, Zap, Shield, Target } from 'lucide-react';
 
 export function StrategicContextPage() {
   return (

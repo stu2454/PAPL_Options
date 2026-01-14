@@ -175,7 +175,7 @@ export function PasswordGate({ children }: PasswordGateProps) {
               placeholder="Enter password"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ndis-purple disabled:bg-gray-100 disabled:cursor-not-allowed"
               autoFocus
-              disabled={isLockedOut}
+              disabled={!!isLockedOut}
             />
           </div>
 
@@ -187,7 +187,7 @@ export function PasswordGate({ children }: PasswordGateProps) {
 
           <button
             type="submit"
-            disabled={isLockedOut}
+            disabled={!!isLockedOut}
             className="w-full bg-ndis-purple text-white py-2 px-4 rounded-md hover:bg-opacity-90 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             {isLockedOut ? 'Locked Out' : 'Access Tool'}

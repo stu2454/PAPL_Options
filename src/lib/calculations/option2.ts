@@ -25,7 +25,7 @@ export function calculateOption2(
   const proprietaryToolsCost = largeOperators * 300_000; // one-time
   
   // 3. Higher error correction
-  const baselineErrors = annualTransactions * (currentState.currentErrorRate / 100);
+  //const _baselineErrors = annualTransactions * (currentState.currentErrorRate / 100);
   const additionalErrors = annualTransactions * (risk.option2ErrorIncrease / 100);
   const errorCostAnnual = additionalErrors * transition.errorCorrectionCost;
   const errorCost6yr = errorCostAnnual * transition.transitionDuration;
