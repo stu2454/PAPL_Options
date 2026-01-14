@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM --platform=linux/amd64 node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -20,7 +20,7 @@ ENV VITE_APP_PASSWORD=$VITE_APP_PASSWORD
 RUN npm run build
 
 # Production stage
-FROM node:20-alpine
+FROM --platform=linux/amd64 node:20-alpine
 
 WORKDIR /app
 
